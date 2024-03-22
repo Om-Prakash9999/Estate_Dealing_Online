@@ -1,0 +1,14 @@
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_11_8538" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="41" height="41">
+<rect x="-0.000488281" y="0.0192871" width="40" height="40" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_11_8538)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38.518 25.0193H17.7255C16.9149 25.0193 16.2495 24.3711 16.2495 23.5732V11.429C16.2495 11.0407 16.4029 10.6681 16.6904 10.3976L27.0387 0.433688C27.6138 -0.115397 28.5284 -0.120486 29.1062 0.428331L39.5586 10.3976C39.8462 10.6734 39.9995 11.0407 39.9995 11.4288V23.5625C39.9965 24.3711 39.3396 25.0193 38.518 25.0193Z" fill="#E47290" fill-opacity="0.6"/>
+<path d="M8.93262 26.4094H14.7812" stroke="#E47290" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.93262 23.997H14.7812" stroke="#E47290" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.3126 23.9895C11.773 23.9895 12.946 25.1771 12.946 26.6557C12.946 28.1343 11.773 29.3219 10.3126 29.3219H8.93262L13.0266 33.0358" stroke="#E47290" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.8495 25.1024C20.6634 20.529 16.5077 17.1519 11.5633 17.1519C5.69483 17.1519 0.9375 21.9092 0.9375 27.7776C0.9375 33.6461 5.69483 38.4034 11.5633 38.4034C13.0126 38.4034 14.3942 38.1133 15.6531 37.5879" stroke="#E47290" stroke-width="1.78979" stroke-linecap="round"/>
+<circle cx="22.0599" cy="32.9551" r="5.86183" fill="#E47290"/>
+<path d="M22.2646 30.4838V33.699C22.2646 33.8328 22.1978 33.9577 22.0865 34.0319L20.7949 34.8929" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>
