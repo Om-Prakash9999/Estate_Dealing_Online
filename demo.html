@@ -1,0 +1,973 @@
+           <!-- Div for sell-residental -->
+           <div id="sell-residentialDiv" style="display: none;">
+            <div class="ju">
+                <div class="formContentLeft">
+                    <div class="property-form-group">
+                        <h5><label for="sell-residental-flat/apartment">Residential </label>
+                        </h5>
+                        <select id="flat-apartment" name="flat[]">
+                            <option>Flat/Apartment</option>
+                            <option>Ploat And Residential House</option>
+                            <option>Villa</option>
+                            <option>Builder Floor Apartment</option>
+                            <option>Penthouse</option>
+                            <option>1 RK / Studio Apartment</option>
+                            <option>Service Apartment</option>
+                            <option>Farm House</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Div for sell-commercial -->
+        <div id="sell-commercialDiv" style="display: none;">
+            <!-- Content for Residential -->
+            <div class="ju">
+                <div class="formContentLeft">
+                    <div class="property-form-group">
+                        <h5><label for="sell-residental-flat/apartment">Commercial </label></h5>
+                        <select id="flat-apartment" name="flat[]" style="padding: 13px 173px;">
+                            <option>Commercial Office Space</option>
+                            <option>Office in It Park / SEZ</option>
+                            <option>Hotel / Resorts</option>
+                            <option>Guest house / banquet Hall </option>
+                            <option>Commercial Shop</option>
+                            <option>Commercial Showroom</option>
+                            <option>Commercial Land</option>
+                            <option>Co-working Space </option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        let activeDivId = null;
+
+        function togglePropertyType(divId) {
+            const selectedDiv = document.getElementById(divId);
+
+            if (activeDivId !== null) {
+                const activeDiv = document.getElementById(activeDivId);
+                activeDiv.style.display = 'none';
+            }
+
+            if (activeDivId !== divId) {
+                selectedDiv.style.display = 'block';
+                activeDivId = divId;
+            } else {
+                activeDivId = null;
+            }
+        }
+
+    </script>
+
+
+    <!--mayur added this js for the oncliked event on sell property button -->
+    <script>
+        // Get references to the radio buttons
+        var residentialRadio = document.getElementById('property-type-for-selling-residential');
+        var commercialRadio = document.getElementById('property-type-for-selling-commercial');
+
+        // Get reference to the sell-residentialDiv
+        var residentialDiv = document.getElementById('sell-residentialDiv');
+
+
+        // Get reference to the sell-commercial
+        var commercialDiv = document.getElementById('sell-commercialDiv');
+
+        // Add event listeners to the radio buttons
+        residentialRadio.addEventListener('change', function () {
+            if (residentialRadio.checked) {
+                residentialDiv.style.display = 'block';  // Show the residentialDiv
+                commercialDiv.style.display = 'none';    // Hide the commercialDiv
+            }
+        });
+
+        commercialRadio.addEventListener('change', function () {
+            if (commercialRadio.checked) {
+                residentialDiv.style.display = 'none';    // Hide the residentialDiv
+                commercialDiv.style.display = 'block';   // Show the commercialDiv
+            }
+        });
+
+        ////
+        <script>
+  function togglePropertyType(divId) {
+    var divs = ['sellDiv', 'rentDiv', 'pgDiv', 'projectsDiv'];
+    divs.forEach(function(id) {
+        var div = document.getElementById(id);
+        if (divId === id) {
+            div.style.display = 'block';
+        } else {
+            div.style.display = 'none';
+        }
+    });
+}
+
+    </script>
+    <section class="post_property  mt-4">
+                <div class="container  post_property">
+
+                    <div class="row my-5" style="column-gap:15px; display: flex; justify-content: center;">
+                        <div class="col-lg-3 col-md-3 col-12"
+                            style="background-color: #fff; column-gap: 13px; padding: 3%;">
+                            <div class="service-option-1 mt-3 active" id="div1" onclick="toggleBasicDetails()">
+                                <i class="fas fa-home"></i> Basic Details
+                            </div>
+                            <div class="service-option-2 mt-3 " id="div2" onclick="toggleLocalityDetails()">
+                                <i class="fas fa-map-marker-alt"></i> Locality Details
+                            </div>
+                            <div class="service-option-1 mt-3 " id="div3" onclick="togglePropertyDetails()">
+                                <i class="fas fa-home"></i> Property Details
+                            </div>
+                            <div class="service-option-4 mt-3 " id="div4" onclick="toggleAmenitiesDetails()">
+                                <i class="fas fa-box-open"></i> Amenities
+                            </div>
+                            <div class="service-option-4 mt-3 " id="div5" onclick="togglePricingDetails()">
+                                <i class="fas fa-box-open"></i> Pricing Details
+                            </div>
+                            <div class="service-option-5 mt-3 " id="div6" onclick="toggleGalleryDetails()">
+                                <i class="fas fa-camera"></i> Gallery
+                            </div>
+                            <div class="service-option-4 mt-3 " id="div7" onclick="toggleBrouchureDetails()">
+                                <i class="fas fa-box-open"></i> Brouchure
+                            </div>
+                            <div class="service-option-4 mt-3 " id="div8" onclick="toggleInformationDetails()">
+                                <i class="fas fa-box-open"></i> Devloper/Builder Information
+                            </div>
+                            <div class="service-option-4 mt-3 " id="div9" onclick="toggleOwnerDetails()">
+                                <i class="fas fa-box-open"></i> Owner information
+                            </div>
+
+                            <div class="service-option-6 mt-3 " id="div10" onclick="toggleScheduleDetails()">
+                                <i class="fas fa-calendar-alt"></i> Schedule
+                            </div>
+
+
+                        </div>
+
+                        <!-- basic details section starts -->
+                        <div class="col-lg-8 col-md-6 col-12 properyInputInfo " id="basicDetails"
+                            style="background-color: #fff; column-gap: 15px; padding: 3%;">
+                            <h1 class="text-center" style="color: #007bff;">Basic Details</h1>
+                            <form class="d-flex mt-3 flex-column align-items-center">
+
+                                <div class="left-option maxWidth" style="margin-top: 5%;">
+                                    <div class="Property-available-for">
+                                        <h6 class="mb-3"><label for="property-option">City:</label></h6>
+                                        <select id="property-option">
+                                            <option value="property-pune">Pune</option>
+                                            <option value="property-mumbai">Mumbai</option>
+                                            <option value="property-gurgaon">Gurgaon</option>
+                                            <option value="property-delhi">Dehli</option>
+                                        </select>
+                                    </div>
+
+                              <!-- Property Available For Section -->
+    <div class="Property-available-for my-5">
+        <h5 class="my-4"> <label>Property Available For</label></h5>
+        <div class="tab-container">
+            <input type="radio" id="sell" name="property_available_for" value="Sell" onclick="togglePropertyType('sellDiv')">
+            <label for="sell">Sell</label>
+
+            <input type="radio" id="rent" name="property_available_for" value="Rent/Lease" onclick="togglePropertyType('rentDiv')">
+            <label for="rent">Rent/Lease</label>
+
+            <input type="radio" id="pg" name="property_available_for" value="PG/Hostel/Co-living" onclick="togglePropertyType('pgDiv')">
+            <label for="pg">PG/Hostel/Co-living</label>
+
+            <input type="radio" id="projects" name="property_available_for" value="Projects" onclick="togglePropertyType('projectsDiv')">
+            <label for="projects">Projects</label>
+        </div>
+    </div>
+
+    <!-- Dynamic Sections Based on Property Available For Selection -->
+    <div id="sellDiv" class="Property-available-for my-5" style="display: none;">
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Residential </label>
+            </h5>
+            <select id="flat-apartment" name="flat[]">
+                <option>Flat/Apartment</option>
+                <option>Ploat And Residential House</option>
+                <option>Villa</option>
+                <option>Builder Floor Apartment</option>
+                <option>Penthouse</option>
+                <option>1 RK / Studio Apartment</option>
+                <option>Service Apartment</option>
+                <option>Farm House</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Commercial </label></h5>
+            <select id="flat-apartment" name="flat[]" >
+                <option>Commercial Office Space</option>
+                <option>Office in It Park / SEZ</option>
+                <option>Hotel / Resorts</option>
+                <option>Guest house / banquet Hall </option>
+                <option>Commercial Shop</option>
+                <option>Commercial Showroom</option>
+                <option>Commercial Land</option>
+                <option>Co-working Space </option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <!-- Content specific to Selling Property will go here -->
+    </div>
+
+    <div id="rentDiv" class="Property-available-for my-5" style="display: none;">
+        <!-- Content specific to Renting/Leasing Property will go here -->
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Residential2 </label>
+            </h5>
+            <select id="flat-apartment" name="flat[]">
+                <option>Flat/Apartment</option>
+                <option>Ploat And Residential House</option>
+                <option>Villa</option>
+                <option>Builder Floor Apartment</option>
+                <option>Penthouse</option>
+                <option>1 RK / Studio Apartment</option>
+                <option>Service Apartment</option>
+                <option>Farm House</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Commercial 2</label></h5>
+            <select id="flat-apartment" name="flat[]" >
+                <option>Commercial Office Space</option>
+                <option>Office in It Park / SEZ</option>
+                <option>Hotel / Resorts</option>
+                <option>Guest house / banquet Hall </option>
+                <option>Commercial Shop</option>
+                <option>Commercial Showroom</option>
+                <option>Commercial Land</option>
+                <option>Co-working Space </option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+
+    <div id="pgDiv" class="Property-available-for my-5" style="display: none;">
+        <!-- Content specific to PG/Hostel/Co-living will go here -->
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Residential 3</label>
+            </h5>
+            <select id="flat-apartment" name="flat[]">
+                <option>Flat/Apartment</option>
+                <option>Ploat And Residential House</option>
+                <option>Villa</option>
+                <option>Builder Floor Apartment</option>
+                <option>Penthouse</option>
+                <option>1 RK / Studio Apartment</option>
+                <option>Service Apartment</option>
+                <option>Farm House</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Commercial 3</label></h5>
+            <select id="flat-apartment" name="flat[]" >
+                <option>Commercial Office Space</option>
+                <option>Office in It Park / SEZ</option>
+                <option>Hotel / Resorts</option>
+                <option>Guest house / banquet Hall </option>
+                <option>Commercial Shop</option>
+                <option>Commercial Showroom</option>
+                <option>Commercial Land</option>
+                <option>Co-working Space </option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+
+    <div id="projectsDiv" class="Property-available-for my-5" style="display: none;">
+        <!-- Content specific to Projects will go here -->
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Residential 4 </label>
+            </h5>
+            <select id="flat-apartment" name="flat[]">
+                <option>Flat/Apartment</option>
+                <option>Ploat And Residential House</option>
+                <option>Villa</option>
+                <option>Builder Floor Apartment</option>
+                <option>Penthouse</option>
+                <option>1 RK / Studio Apartment</option>
+                <option>Service Apartment</option>
+                <option>Farm House</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="property-form-group">
+            <h5><label for="sell-residental-flat/apartment">Commercial 4</label></h5>
+            <select id="flat-apartment" name="flat[]" >
+                <option>Commercial Office Space</option>
+                <option>Office in It Park / SEZ</option>
+                <option>Hotel / Resorts</option>
+                <option>Guest house / banquet Hall </option>
+                <option>Commercial Shop</option>
+                <option>Commercial Showroom</option>
+                <option>Commercial Land</option>
+                <option>Co-working Space </option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+                                
+                            </form>
+                        </div>
+                        <!-- basic details section end -->
+
+                        <!-- locality details section  starts -->
+                        <div class="col-lg-8 col-md-6 col-12 properyInputInfo d-none" id="localityDetails"
+                            style="background-color: #fff; column-gap: 15px; padding: 3%;">
+                            <h1 class="text-center" style="color: #007bff;">Locality Details</h1>
+                            <form class="d-flex mt-3 ">
+
+                                <div class="left-option" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">City:</label>
+                                        <select id="property-option">
+                                            <option value="property-pune">Pune</option>
+                                            <option value="property-mumbai">Mumbai</option>
+                                            <option value="property-gurgaon">Gurgaon</option>
+                                            <option value="property-delhi">Dehli</option>
+                                        </select>
+                                    </div>
+                                    <div class="property-form-group">
+                                        <label for="BHK">Landmark / Street</label>
+                                        <input type="text" name="landmark" id="landmark"
+                                            placeholder="e.g. Evergreen street">
+                                    </div>
+                                </div>
+
+                                <div class="right-option  mx-2" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">Locality
+                                        </label>
+                                        <i class="fas fa-map-marker-alt" id="mapIcon"></i>
+                                        <input type="text" placeholder="Enter location/ society name"
+                                            style="padding-left:2.4rem;">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="property-form-group">
+                                <label for="location">Location:</label>
+                                <form id="locationForm">
+                                    <input type="text" id="location" name="location">
+                                    <button type="submit">Show Map</button>
+                                </form>
+                                <div id="map">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- locality details section end -->
+
+                        <!-- property details section starts-->
+                        <div class="col-lg-8 col-md-6 col-12 properyInputInfo d-none" id="propertyDetails"
+                            style="background-color: #fff; column-gap: 15px; padding: 3%;">
+                            <h1 class="text-center" style="color: #007bff;">Property Details</h1>
+                            <form class="d-flex mt-3 ">
+
+                                <div class="left-option" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">Apartment Type:</label>
+                                        <select id="property-option">
+                                            <div>
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <option value="property-type1">Apartment</option>
+                                            <option value="property-type2">Independent house/villa</option>
+                                            <option value="property-type3">Gated Community villa</option>
+                                        </select>
+                                    </div>
+                                    <div class="property-form-group">
+                                        <label for="BHK">BHK Type:</label>
+                                        <select id="BHK">
+                                            <option value="BHK-type1">1RK</option>
+                                            <option value="BHK-type2">1 BHK</option>
+                                            <option value="BHK-type3">2 BHK</option>
+                                            <option value="BHK-type1">3 BHK</option>
+                                            <option value="BHK-type2">4 BHK</option>
+                                            <option value="BHK-type3">4 + BHK</option>
+                                        </select>
+                                    </div>
+                                    <div class="property-form-group">
+                                        <label for="BHK">Property Age:</label>
+                                        <select id="BHK">
+                                            <option value="BHK-type1">Less than a Year</option>
+                                            <option value="BHK-type2">1 to 3 year </option>
+                                            <option value="BHK-type3">3 to 5 year</option>
+                                            <option value="BHK-type1">5 to 10 year</option>
+                                            <option value="BHK-type2">more than 10 year</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="property-form-group">
+                                        <span class="right-input-text">sq.ft</span>
+                                        <label for="BHK">Built Up Area:</label>
+
+                                        <input type="text" id="Built-Area" style="padding-right: 4rem;"> </input>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="right-option  mx-2" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">Apartment Name:
+                                        </label>
+                                        <input type="text" name="ApartmentName" id="ApartmentName"
+                                            placeholder="e.g. Ajmera Enclave" class="property-option">
+                                    </div>
+
+                                    <div class="property-form-div d-flex" style="column-gap: 7px;">
+                                        <div class="property-floor">
+                                            <div class="property-form-group">
+                                                <label for="property-option">Floor:</label>
+                                                <select id="property-option">
+                                                    <option value="property-floor1">Ground</option>
+                                                    <option value="property-floor2">1 </option>
+                                                    <option value="property-floor3">2</option>
+                                                    <option value="property-floor4">3 </option>
+                                                    <option value="property-floor5">4</option>
+                                                    <option value="property-floor6">5 </option>
+                                                    <option value="property-floor7">6</option>
+                                                    <option value="property-floor8">7 </option>
+                                                    <option value="property-floor9">Top</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="property-totalfloor">
+                                            <div class="property-form-group">
+                                                <label for="property-option">TotalFloor:</label>
+                                                <select id="property-option">
+                                                    <option value="property-totalfloor1">Ground</option>
+                                                    <option value="property-totalfloor2">1 </option>
+                                                    <option value="property-totalfloor3">2</option>
+                                                    <option value="property-totalfloor4">3 </option>
+                                                    <option value="property-totalfloor5">4</option>
+                                                    <option value="property-totalfloor6">5 </option>
+                                                    <option value="property-totalfloor7">6</option>
+                                                    <option value="property-totalfloor8">7 </option>
+                                                    <option value="property-totalfloor9">8 </option>
+                                                    <option value="property-totalfloor10">9 </option>
+                                                    <option value="property-totalfloor11">10 </option>
+                                                    <option value="property-totalfloor12">11</option>
+                                                    <option value="property-totalfloor13">12</option>
+                                                    <option value="property-totalfloor14">13</option>
+                                                    <option value="property-totalfloor15">14</option>
+                                                    <option value="property-totalfloor16">15</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="property-form-group">
+                                        <label for="property-direction">Facing</label>
+                                        <select id="property-direction">
+                                            <option value="property-direction1">North</option>
+                                            <option value="property-direction2">South</option>
+                                            <option value="property-direction3">East</option>
+                                            <option value="property-direction1">West</option>
+                                            <option value="property-direction2">North-East</option>
+                                            <option value="property-direction3">South-East</option>
+                                            <option value="property-direction1">North-West</option>
+                                            <option value="property-direction2">South-west</option>
+                                            <option value="property-direction3">Centered</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        <!-- property detils section end -->
+
+                        <!-- Amenities section detils starts -->
+                        <div class="col-lg-8 col-md-6 col-12 properyInputInfo d-none" id="amenitiesDetails"
+                            style="background-color: #fff; column-gap: 15px; padding: 3%;">
+                            <h1 class="text-center" style="color: #007bff;">Amenities Details</h1>
+                            <form class="d-flex mt-3 ">
+
+                                <div class="left-option" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">Apartment Type:</label>
+                                        <select id="property-option">
+                                            <option value="property-type1">Apartment</option>
+                                            <option value="property-type2">Independent house/villa</option>
+                                            <option value="property-type3">Gated Community villa</option>
+                                        </select>
+                                    </div>
+                                    <div class="property-form-group">
+                                        <label for="BHK">BHK Type:</label>
+                                        <select id="BHK">
+                                            <option value="BHK-type1">1RK</option>
+                                            <option value="BHK-type2">1 BHK</option>
+                                            <option value="BHK-type3">2 BHK</option>
+                                            <option value="BHK-type1">3 BHK</option>
+                                            <option value="BHK-type2">4 BHK</option>
+                                            <option value="BHK-type3">4 + BHK</option>
+                                        </select>
+                                    </div>
+                                    <div class="property-form-group">
+                                        <label for="BHK">Property Age:</label>
+                                        <select id="BHK">
+                                            <option value="BHK-type1">Less than a Year</option>
+                                            <option value="BHK-type2">1 to 3 year </option>
+                                            <option value="BHK-type3">3 to 5 year</option>
+                                            <option value="BHK-type1">5 to 10 year</option>
+                                            <option value="BHK-type2">more than 10 year</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="property-form-group">
+                                        <label for="BHK">Built Up Area:</label>
+                                        <input type="text" id="Built-Area" placeholder=" sq.ft"> </input>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="right-option  mx-2" style="margin-top: 10%;">
+                                    <div class="property-form-group">
+                                        <label for="property-option">Apartment Name:
+                                        </label>
+                                        <select id="property-option">
+                                            <option value="property-type1">Apartment</option>
+                                            <option value="property-type2">Independent house/villa</option>
+                                            <option value="property-type3">Gated Community villa</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="property-form-div d-flex" style="column-gap: 7px;">
+                                        <div class="property-floor">
+                                            <div class="property-form-group">
+                                                <label for="property-option">Floor:</label>
+                                                <select id="property-option">
+                                                    <option value="property-floor1">Ground</option>
+                                                    <option value="property-floor2">1 </option>
+                                                    <option value="property-floor3">2</option>
+                                                    <option value="property-floor4">3 </option>
+                                                    <option value="property-floor5">4</option>
+                                                    <option value="property-floor6">5 </option>
+                                                    <option value="property-floor7">6</option>
+                                                    <option value="property-floor8">7 </option>
+                                                    <option value="property-floor9">Top</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="property-totalfloor">
+                                            <div class="property-form-group">
+                                                <label for="property-option">TotalFloor:</label>
+                                                <select id="property-option">
+                                                    <option value="property-totalfloor1">Ground</option>
+                                                    <option value="property-totalfloor2">1 </option>
+                                                    <option value="property-totalfloor3">2</option>
+                                                    <option value="property-totalfloor4">3 </option>
+                                                    <option value="property-totalfloor5">4</option>
+                                                    <option value="property-totalfloor6">5 </option>
+                                                    <option value="property-totalfloor7">6</option>
+                                                    <option value="property-totalfloor8">7 </option>
+                                                    <option value="property-totalfloor9">8 </option>
+                                                    <option value="property-totalfloor10">9 </option>
+                                                    <option value="property-totalfloor11">10 </option>
+                                                    <option value="property-totalfloor12">11</option>
+                                                    <option value="property-totalfloor13">12</option>
+                                                    <option value="property-totalfloor14">13</option>
+                                                    <option value="property-totalfloor15">14</option>
+                                                    <option value="property-totalfloor16">15</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="property-form-group">
+                                        <label for="property-direction">Facing</label>
+                                        <select id="property-direction">
+                                            <option value="property-direction1">North</option>
+                                            <option value="property-direction2">South</option>
+                                            <option value="property-direction3">East</option>
+                                            <option value="property-direction1">West</option>
+                                            <option value="property-direction2">North-East</option>
+                                            <option value="property-direction3">South-East</option>
+                                            <option value="property-direction1">North-West</option>
+                                            <option value="property-direction2">South-west</option>
+                                            <option value="property-direction3">Centered</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                
+                        <!-- brouchure section detils end -->
+                        <!-- Developer/Builder information section detils starts -->
+                  
+                    </div>
+                </div>
+            </section>
+
+            ///////
+            // basic details 
+function toggleBasicDetails() {
+	var basicDetails = document.getElementById("basicDetails");
+	var div1 = document.getElementById("div1");
+
+
+	if (basicDetails.classList.contains("d-none")) {
+
+		basicDetails.classList.remove("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div1.classList.add("active");
+
+		// adding active class
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+
+// locality Details
+function toggleLocalityDetails() {
+	var localityDetails = document.getElementById("localityDetails");
+	var div2 = document.getElementById("div2");
+
+	if (localityDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.remove("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+		
+
+		// adding active class
+		div2.classList.add("active");
+
+
+		// adding active class
+		div1.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	} 
+//     else {
+//         localityDetails.classList.add("d-none");
+}
+
+// property Details  
+function togglePropertyDetails() {
+	var propertyDetails = document.getElementById("propertyDetails");
+	var div3 = document.getElementById("div3");
+
+
+	if (propertyDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.remove("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div3.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+	
+	
+		
+	
+}
+
+
+// amenities   
+function toggleAmenitiesDetails() {
+	var amenitiesDetails = document.getElementById("amenitiesDetails");
+	var div4 = document.getElementById("div4");
+
+
+	if (amenitiesDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.remove("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div4.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+
+// pricing details   
+function togglePricingDetails() {
+	var pricingDetails = document.getElementById("pricingDetails");
+	var div5= document.getElementById("div5");
+
+
+	if (pricingDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.remove("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div5.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+
+// gallery Details
+function toggleGalleryDetails() {
+	var galleryDetails = document.getElementById("galleryDetails");
+	var div6 = document.getElementById("div6");
+
+	if (galleryDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.remove("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div6.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+// brouchure Details
+function toggleBrouchureDetails() {
+	var brouchureDetails = document.getElementById("brouchureDetails");
+	var div7 = document.getElementById("div7");
+
+	if (brouchureDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.remove("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div7.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+// developer / builder information
+function toggleInformationDetails() {
+	var informationDetails = document.getElementById("informationDetails");
+	var div8= document.getElementById("div8");
+
+	if (informationDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.remove("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div8.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div9.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+
+// owner information
+function toggleOwnerDetails() {
+	var ownerDetails = document.getElementById("ownerDetails");
+	var div9= document.getElementById("div9");
+
+	if (ownerDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.remove("d-none");
+		scheduleDetails.classList.add("d-none");
+
+		// adding active class
+		div9.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div10.classList.remove("active");
+	}
+}
+
+// schedule Details
+function toggleScheduleDetails() {
+	var scheduleDetails = document.getElementById("scheduleDetails");
+	var div10 = document.getElementById("div10");
+
+	if (scheduleDetails.classList.contains("d-none")) {
+		basicDetails.classList.add("d-none");
+		localityDetails.classList.add("d-none");
+		propertyDetails.classList.add("d-none");
+		amenitiesDetails.classList.add("d-none");
+		pricingDetails.classList.add("d-none");
+		galleryDetails.classList.add("d-none");
+		brouchureDetails.classList.add("d-none");
+		informationDetails.classList.add("d-none");
+		ownerDetails.classList.add("d-none");
+		scheduleDetails.classList.remove("d-none");
+
+		// adding active class
+		div10.classList.add("active");
+
+		// adding active class
+		div1.classList.remove("active");
+		div2.classList.remove("active");
+		div3.classList.remove("active");
+		div4.classList.remove("active");
+		div5.classList.remove("active");
+		div6.classList.remove("active");
+		div7.classList.remove("active");
+		div8.classList.remove("active");
+		div9.classList.remove("active");
+		
+	}
+}
